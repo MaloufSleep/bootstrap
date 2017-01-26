@@ -93,12 +93,12 @@
 
 // Start with assigning color names to specific hex values.
 $white:  #fff !default;
-$black:  #000 !default;
+$black:  #252830 !default;
 $red:    #d9534f !default;
 $orange: #f0ad4e !default;
 $yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
+$green:  #3cb83c !default;
+$blue:   #72d5ff !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
@@ -107,11 +107,11 @@ $purple: #613d7c !default;
 $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
 $gray-light:                #636c72 !default;
-$gray-lighter:              #eceeef !default;
+$gray-lighter:              #9f929a !default;
 $gray-lightest:             #f7f7f9 !default;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+$brand-primary:             lighten(#254890, 15%) !default;  //$blue !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
@@ -181,14 +181,14 @@ $sizes: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
-$body-color:    $gray-dark !default;
+$body-bg:       $black !default;
+$body-color:    $gray-lighter !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary !default;
+$link-color:            lighten($brand-primary, 10%) !default;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
@@ -335,11 +335,11 @@ $table-sm-cell-padding:         .3rem !default;
 
 $table-bg:                      transparent !default;
 
-$table-inverse-bg:              $gray-dark !default;
+$table-inverse-bg:              $white !default;
 $table-inverse-color:           $body-bg !default;
 
-$table-bg-accent:               rgba($black,.05) !default;
-$table-bg-hover:                rgba($black,.075) !default;
+$table-bg-accent:               rgba($white,.030) !default;
+$table-bg-hover:                rgba($white,.030) !default;
 $table-bg-active:               $table-bg-hover !default;
 
 $table-head-bg:                 $gray-lighter !default;
@@ -361,29 +361,29 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba(
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125) !default;
 
-$btn-primary-color:              $white !default;
+$btn-primary-color:              $black !default;
 $btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $btn-primary-bg !default;
+$btn-primary-border:             darken($btn-primary-bg, 15%) !default;
 
-$btn-secondary-color:            $gray-dark !default;
-$btn-secondary-bg:               $white !default;
-$btn-secondary-border:           #ccc !default;
+$btn-secondary-color:            $black !default;
+$btn-secondary-bg:               $gray-lighter !default;
+$btn-secondary-border:           darken($btn-secondary-bg, 15%) !default;
 
-$btn-info-color:                 $white !default;
+$btn-info-color:                 $black !default;
 $btn-info-bg:                    $brand-info !default;
-$btn-info-border:                $btn-info-bg !default;
+$btn-info-border:                darken($btn-info-bg, 15%) !default;
 
-$btn-success-color:              $white !default;
+$btn-success-color:              $black !default;
 $btn-success-bg:                 $brand-success !default;
-$btn-success-border:             $btn-success-bg !default;
+$btn-success-border:             darken($btn-success-bg, 15%) !default;
 
-$btn-warning-color:              $white !default;
+$btn-warning-color:              $black !default;
 $btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             $btn-warning-bg !default;
+$btn-warning-border:             darken($btn-warning-bg, 15%) !default;
 
-$btn-danger-color:               $white !default;
+$btn-danger-color:               $black !default;
 $btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              $btn-danger-bg !default;
+$btn-danger-border:              darken($btn-danger-bg, 15%) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -409,11 +409,11 @@ $input-padding-x:                .75rem !default;
 $input-padding-y:                .5rem !default;
 $input-line-height:              1.25 !default;
 
-$input-bg:                       $white !default;
+$input-bg:                       lighten($black, 5%) !default;
 $input-bg-disabled:              $gray-lighter !default;
 
-$input-color:                    $gray !default;
-$input-border-color:             rgba($black,.15) !default;
+$input-color:                    $gray-lightest !default;
+$input-border-color:             $black !default;
 $input-btn-border-width:         $border-width !default; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black,.075) !default;
 
@@ -422,7 +422,7 @@ $input-border-radius-lg:         $border-radius-lg !default;
 $input-border-radius-sm:         $border-radius-sm !default;
 
 $input-bg-focus:                 $input-bg !default;
-$input-border-focus:             lighten($brand-primary, 25%) !default;
+$input-border-focus:             $brand-primary !default;
 $input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6) !default;
 $input-color-focus:              $input-color !default;
 
@@ -598,32 +598,32 @@ $navbar-toggler-padding-y:           .25rem !default;
 $navbar-toggler-font-size:           $font-size-lg !default;
 $navbar-toggler-border-radius:       $btn-border-radius !default;
 
-$navbar-inverse-color:                 rgba($white,.5) !default;
-$navbar-inverse-hover-color:           rgba($white,.75) !default;
-$navbar-inverse-active-color:          rgba($white,1) !default;
-$navbar-inverse-disabled-color:        rgba($white,.25) !default;
-$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-inverse-toggler-border:        rgba($white,.1) !default;
+$navbar-inverse-color:                 rgba($black,.5) !default;
+$navbar-inverse-hover-color:           rgba($black,.75) !default;
+$navbar-inverse-active-color:          rgba($black,1) !default;
+$navbar-inverse-disabled-color:        rgba($black,.25) !default;
+$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-inverse-toggler-border:        rgba($black,.1) !default;
 
-$navbar-light-color:                rgba($black,.5) !default;
-$navbar-light-hover-color:          rgba($black,.7) !default;
-$navbar-light-active-color:         rgba($black,.9) !default;
-$navbar-light-disabled-color:       rgba($black,.3) !default;
-$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border:       rgba($black,.1) !default;
+$navbar-light-color:                rgba($white,.5) !default;
+$navbar-light-hover-color:          rgba($white,.7) !default;
+$navbar-light-active-color:         rgba($white,.9) !default;
+$navbar-light-disabled-color:       rgba($white,.3) !default;
+$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-light-toggler-border:       rgba($white,.1) !default; 
 
 // Navs
 
 $nav-link-padding:              .5em 1em !default;
 $nav-disabled-link-color:       $gray-light !default;
 
-$nav-tabs-border-color:                       #ddd !default;
+$nav-tabs-border-color:                       rgba($white,.125) !default;
 $nav-tabs-border-width:                       $border-width !default;
 $nav-tabs-border-radius:                      $border-radius !default;
-$nav-tabs-link-hover-border-color:            $gray-lighter !default;
-$nav-tabs-active-link-hover-color:            $gray !default;
+$nav-tabs-link-hover-border-color:            rgba($white,.125) !default;
+$nav-tabs-active-link-hover-color:            $gray-lighter !default;
 $nav-tabs-active-link-hover-bg:               $body-bg !default;
-$nav-tabs-active-link-hover-border-color:     #ddd !default;
+$nav-tabs-active-link-hover-border-color:     rgba($white,.125) !default;
 
 $nav-pills-border-radius:     $border-radius !default;
 $nav-pills-active-link-color: $component-active-color !default;
@@ -641,49 +641,49 @@ $pagination-padding-y-lg:             .75rem !default;
 $pagination-line-height:              1.25 !default;
 
 $pagination-color:                     $link-color !default;
-$pagination-bg:                        $white !default;
+$pagination-bg:                        $black !default;
 $pagination-border-width:              $border-width !default;
-$pagination-border-color:              #ddd !default;
+$pagination-border-color:              rgba($white,.125) !default;
 
 $pagination-hover-color:               $link-hover-color !default;
 $pagination-hover-bg:                  $gray-lighter !default;
-$pagination-hover-border:              #ddd !default;
+$pagination-hover-border:              rgba($white,.125) !default;
 
-$pagination-active-color:              $white !default;
+$pagination-active-color:              $black !default;
 $pagination-active-bg:                 $brand-primary !default;
 $pagination-active-border:             $brand-primary !default;
 
 $pagination-disabled-color:            $gray-light !default;
-$pagination-disabled-bg:               $white !default;
-$pagination-disabled-border:           #ddd !default;
+$pagination-disabled-bg:               $black !default;
+$pagination-disabled-border:           rgba($white,.125) !default;
 
 
 // Jumbotron
 
 $jumbotron-padding:              2rem !default;
-$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   darken($black, 5%) !default;
 
 
 // Form states and alerts
 //
 // Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
-$state-success-border:           darken($state-success-bg, 5%) !default;
+$state-success-text:             $brand-success !default;
+$state-success-bg:               mix($state-success-text, $black, 15%) !default;
+$state-success-border:           darken($state-success-text, 25%) !default;
 
-$state-info-text:                #31708f !default;
-$state-info-bg:                  #d9edf7 !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-text:                $brand-info !default;
+$state-info-bg:                  mix($state-info-text, $black, 15%) !default;
+$state-info-border:              darken($state-info-text, 25%) !default;
 
-$state-warning-text:             #8a6d3b !default;
-$state-warning-bg:               #fcf8e3 !default;
+$state-warning-text:             $brand-warning !default;
+$state-warning-bg:               mix($state-warning-text, $black, 15%) !default;
 $mark-bg:                        $state-warning-bg !default;
-$state-warning-border:           darken($state-warning-bg, 5%) !default;
+$state-warning-border:           darken($state-warning-text, 25%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken($state-danger-bg, 5%) !default;
+$state-danger-text:              $brand-danger !default;
+$state-danger-bg:                mix($state-danger-text, $black, 15%) !default;
+$state-danger-border:            darken($state-danger-text, 25%) !default;
 
 
 // Cards
@@ -692,12 +692,12 @@ $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
 $card-border-width:        1px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        rgba($black,.125) !default;
+$card-border-color:        rgba($white,.125) !default;
 $card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width}) !default;
-$card-cap-bg:              $gray-lightest !default;
-$card-bg:                  $white !default;
+$card-cap-bg:              $black !default;
+$card-bg:                  $black !default;
 
-$card-link-hover-color:    $white !default;
+$card-link-hover-color:    $black !default;
 
 $card-img-overlay-padding: 1.25rem !default;
 
@@ -711,8 +711,8 @@ $card-columns-margin:       $card-spacer-y !default;
 // Tooltips
 
 $tooltip-max-width:           200px !default;
-$tooltip-color:               $white !default;
-$tooltip-bg:                  $black !default;
+$tooltip-color:               $black !default;
+$tooltip-bg:                  $white !default;
 $tooltip-opacity:             .9 !default;
 $tooltip-padding-y:           3px !default;
 $tooltip-padding-x:           8px !default;
@@ -725,13 +725,13 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 // Popovers
 
 $popover-inner-padding:               1px !default;
-$popover-bg:                          $white !default;
+$popover-bg:                          $black !default;
 $popover-max-width:                   276px !default;
 $popover-border-width:                $border-width !default;
-$popover-border-color:                rgba($black,.2) !default;
-$popover-box-shadow:                  0 5px 10px rgba($black,.2) !default;
+$popover-border-color:                rgba($white,.2) !default;
+$popover-box-shadow:                  0 5px 10px rgba($white,.2) !default;
 
-$popover-title-bg:                    darken($popover-bg, 3%) !default;
+$popover-title-bg:                    lighten($popover-bg, 3%) !default;
 $popover-title-padding-x:             14px !default;
 $popover-title-padding-y:             8px !default;
 
@@ -754,8 +754,8 @@ $badge-info-bg:               $brand-info !default;
 $badge-warning-bg:            $brand-warning !default;
 $badge-danger-bg:             $brand-danger !default;
 
-$badge-color:                 $white !default;
-$badge-link-hover-color:      $white !default;
+$badge-color:                 $black !default;
+$badge-link-hover-color:      $black !default;
 $badge-font-size:             75% !default;
 $badge-font-weight:           $font-weight-bold !default;
 $badge-padding-x:             .4em !default;
@@ -840,8 +840,8 @@ $progress-bar-animation-timing: 1s linear infinite !default;
 // List group
 
 $list-group-color:               $body-color !default;
-$list-group-bg:                  $white !default;
-$list-group-border-color:        rgba($black,.125) !default;
+$list-group-bg:                  $black !default;
+$list-group-border-color:        rgba($white,.125) !default;
 $list-group-border-width:        $border-width !default;
 $list-group-border-radius:       $border-radius !default;
 
@@ -886,7 +886,7 @@ $breadcrumb-padding-y:          .75rem !default;
 $breadcrumb-padding-x:          1rem !default;
 $breadcrumb-item-padding:       .5rem !default;
 
-$breadcrumb-bg:                 $gray-lighter !default;
+$breadcrumb-bg:                 darken($black, 5%) !default;
 $breadcrumb-divider-color:      $gray-light !default;
 $breadcrumb-active-color:       $gray-light !default;
 $breadcrumb-divider:            "/" !default;
@@ -927,10 +927,10 @@ $code-font-size:              90% !default;
 $code-padding-x:              .4rem !default;
 $code-padding-y:              .2rem !default;
 $code-color:                  #bd4147 !default;
-$code-bg:                     $gray-lightest !default;
+$code-bg:                     darken($black, 5%) !default;
 
-$kbd-color:                   $white !default;
-$kbd-bg:                      $gray-dark !default;
+$kbd-color:                   darken($black, 5%) !default;
+$kbd-bg:                      $gray-light !default;
 
-$pre-color:                   $gray-dark !default;
+$pre-color:                   $gray-light !default;
 $pre-scrollable-max-height:   340px !default;
