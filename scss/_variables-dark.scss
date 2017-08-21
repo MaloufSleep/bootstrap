@@ -108,7 +108,7 @@ $gray-dark:                 #292b2c !default;
 $gray:                      #464a4c !default;
 $gray-light:                #636c72 !default;
 $gray-lighter:              #9f929a !default;
-$gray-lightest:             #f7f7f9 !default;
+$gray-lightest:             #c7c7c9 !default;
 
 // Reassign color vars to semantic color scheme
 $brand-primary:             lighten(#254890, 15%) !default;  //$blue !default;
@@ -267,7 +267,7 @@ $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family:   inherit !default;
 $headings-font-weight:   500 !default;
 $headings-line-height:   1.1 !default;
-$headings-color:         inherit !default;
+$headings-color:         $gray-lightest !default;
 
 $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
